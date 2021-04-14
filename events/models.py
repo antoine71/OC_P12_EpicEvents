@@ -11,7 +11,7 @@ class Client(models.Model):
     email = models.CharField(max_length=100, blank=True)
     phone = models.CharField(max_length=20, blank=True)
     mobile = models.CharField(max_length=20, blank=True)
-    company_name = models.CharField(max_length=250)
+    company_name = models.CharField(max_length=100)
     converted = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(null=True)
