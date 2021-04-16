@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 
-from events.models import Client, Contract, Event
+from ..models import Client, Contract, Event
 
 
 class ClientSerializer(serializers.ModelSerializer):

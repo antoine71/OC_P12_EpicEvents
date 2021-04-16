@@ -1,0 +1,203 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$Xx6pc3JOwURU5OF34sLK6y$daQL8g9EcRCv9Sh9P0dfWn0l7Qjmxi4hcAA9ivBgS/M=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "manager_user",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2021-04-16T07:52:00Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$8EA8RhkaB6ohjAMjKUmPpq$m/NzSZ4h+gJXI5z/UFm31v+xwCiJg2vm1daR1OIYFp0=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sales_user_owner_client_1",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-04-16T07:51:30Z",
+            "groups": [
+                1
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$mwM89d5Hlma6at6wtbhLwq$CAw7Ut8l0sETJmL3QW5HmxfIPoC2SOTgOmhRuNnsbfk=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "support_user_owner_event_1",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-04-16T07:50:51Z",
+            "groups": [
+                2
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$8EA8RhkaB6ohjAMjKUmPpq$m/NzSZ4h+gJXI5z/UFm31v+xwCiJg2vm1daR1OIYFp0=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "random_sales_user",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-04-16T07:51:30Z",
+            "groups": [
+                1
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$mwM89d5Hlma6at6wtbhLwq$CAw7Ut8l0sETJmL3QW5HmxfIPoC2SOTgOmhRuNnsbfk=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "random_support_user",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-04-16T07:50:51Z",
+            "groups": [
+                2
+            ],
+            "user_permissions": []
+        }
+    },    
+    {
+        "model": "auth.user",
+        "pk": 6,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$fIjWyrjdL5AYoitIdrpoqG$bsAR19NsasoTSs2RmyB7uTLnjszw6GtECaHJsmnBzO8=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "random_user",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-04-16T07:52:46.653Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.group",
+        "pk": 1,
+        "fields": {
+            "name": "sales",
+            "permissions": []
+        }
+    },
+    {
+        "model": "auth.group",
+        "pk": 2,
+        "fields": {
+            "name": "support",
+            "permissions": []
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 1,
+        "fields": {
+            "sales_contact": 2,
+            "first_name": "test_client_1",
+            "last_name": "test_client_1",
+            "email": "",
+            "phone": "",
+            "mobile": "",
+            "company_name": "test_client_1",
+            "converted": false,
+            "date_created": "2021-04-16T07:54:12.772Z",
+            "date_updated": "2021-04-16T07:54:11Z"
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 2,
+        "fields": {
+            "sales_contact": 2,
+            "first_name": "test_client_2",
+            "last_name": "test_client_2",
+            "email": "",
+            "phone": "",
+            "mobile": "",
+            "company_name": "test_client_2",
+            "converted": false,
+            "date_created": "2021-04-16T07:54:25.230Z",
+            "date_updated": "2021-04-16T07:54:24Z"
+        }
+    },
+    {
+        "model": "events.contract",
+        "pk": 1,
+        "fields": {
+            "client": 1,
+            "signed": false,
+            "amount": 1.0,
+            "payment_due_date": "2021-04-16T07:55:08Z",
+            "date_created": "2021-04-16T07:55:09.458Z",
+            "date_updated": "2021-04-16T07:54:46Z"
+        }
+    },
+    {
+        "model": "events.contract",
+        "pk": 2,
+        "fields": {
+            "client": 1,
+            "signed": false,
+            "amount": 1.0,
+            "payment_due_date": "2021-04-16T07:55:29Z",
+            "date_created": "2021-04-16T07:55:32.370Z",
+            "date_updated": "2021-04-16T07:55:31Z"
+        }
+    },
+    {
+        "model": "events.event",
+        "pk": 1,
+        "fields": {
+            "support_contact": 3,
+            "attendees": 1,
+            "event_date": "2021-04-16T07:55:50Z",
+            "notes": "",
+            "completed": false,
+            "date_created": "2021-04-16T07:55:53.230Z",
+            "date_updated": "2021-04-16T07:55:53Z"
+        }
+    }
+]

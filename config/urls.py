@@ -8,5 +8,5 @@ urlpatterns = [
 
 urlpatterns += [
     path('auth-token/', obtain_auth_token),
-    path('api/', include('epicevents.api_router')),
+    path('api/', include('config.api_router')),
 ]

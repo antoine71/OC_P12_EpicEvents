@@ -4,7 +4,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-from events.models import Client, Contract, Event
+from ..models import Client, Contract, Event
 from .serializers import ClientSerializer, ContractSerializer, EventSerializer
 from .permissions import ClientPermission, ContractPermission, EventPermission
 
@@ -43,8 +43,7 @@ class ContractViewSet(mixins.RetrieveModelMixin,
         serializer.is_valid(raise_exception=True)
         serializer.validate_contract(pk)
         serializer.save(contract=self.get_object())
-        headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class EventViewSet(mixins.RetrieveModelMixin,

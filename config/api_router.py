@@ -1,6 +1,6 @@
 from rest_framework.routers import SimpleRouter
 
-from events.api.views import ClientViewSet, ContractViewSet, EventViewSet
+from epicevents.events.api.views import ClientViewSet, ContractViewSet, EventViewSet
 
 router = SimpleRouter()
 

@@ -27,4 +27,4 @@ class EventPermission(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
             return True
-        return request.user == obj.client.support_contact
+        return request.user == obj.support_contact
