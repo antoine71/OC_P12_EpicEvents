@@ -168,6 +168,7 @@
         "pk": 1,
         "fields": {
             "client": 1,
+            "project_name": "project",
             "signed": false,
             "amount": 1.0,
             "payment_due_date": "2021-04-16T07:55:08Z",
@@ -180,6 +181,7 @@
         "pk": 2,
         "fields": {
             "client": 1,
+            "project_name": "project",            
             "signed": false,
             "amount": 1.0,
             "payment_due_date": "2021-04-16T07:55:29Z",

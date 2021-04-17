@@ -1,0 +1,1313 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2021-04-14T15:49:57.208Z",
+            "user": 1,
+            "content_type": 3,
+            "object_id": "1",
+            "object_repr": "sales",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2021-04-14T15:50:12.726Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "1",
+            "object_repr": "antoine",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2021-04-14T15:52:23.962Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "2",
+            "object_repr": "jean",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2021-04-14T15:53:28.977Z",
+            "user": 1,
+            "content_type": 3,
+            "object_id": "2",
+            "object_repr": "support",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2021-04-14T15:53:42.344Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "2",
+            "object_repr": "jean",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2021-04-16T07:49:45.048Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "3",
+            "object_repr": "sales_user",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2021-04-16T07:50:51.061Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "4",
+            "object_repr": "support_user",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2021-04-16T07:51:08.954Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "3",
+            "object_repr": "sales_user",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2021-04-16T07:51:30.494Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "5",
+            "object_repr": "sales_user",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2021-04-16T07:52:00.439Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "6",
+            "object_repr": "manager_user",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2021-04-16T07:52:46.707Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "7",
+            "object_repr": "random_user",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2021-04-16T07:53:11.553Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "6",
+            "object_repr": "manager_user",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2021-04-16T07:53:26.476Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "5",
+            "object_repr": "sales_user",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2021-04-16T07:53:32.981Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "4",
+            "object_repr": "support_user",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2021-04-16T07:54:12.773Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "14",
+            "object_repr": "Client object (14)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2021-04-16T07:54:25.230Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "15",
+            "object_repr": "Client object (15)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 17,
+        "fields": {
+            "action_time": "2021-04-16T07:55:09.459Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "8",
+            "object_repr": "Contract object (8)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 18,
+        "fields": {
+            "action_time": "2021-04-16T07:55:32.370Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "9",
+            "object_repr": "Contract object (9)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 19,
+        "fields": {
+            "action_time": "2021-04-16T07:55:53.231Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "8",
+            "object_repr": "Event object (8)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 3,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 4,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 4,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 4,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 4,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 5,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 5,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 5,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 5,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 6,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 6,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 6,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 6,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add client",
+            "content_type": 7,
+            "codename": "add_client"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change client",
+            "content_type": 7,
+            "codename": "change_client"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete client",
+            "content_type": 7,
+            "codename": "delete_client"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view client",
+            "content_type": 7,
+            "codename": "view_client"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add contract",
+            "content_type": 8,
+            "codename": "add_contract"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change contract",
+            "content_type": 8,
+            "codename": "change_contract"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete contract",
+            "content_type": 8,
+            "codename": "delete_contract"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view contract",
+            "content_type": 8,
+            "codename": "view_contract"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add event",
+            "content_type": 9,
+            "codename": "add_event"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change event",
+            "content_type": 9,
+            "codename": "change_event"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete event",
+            "content_type": 9,
+            "codename": "delete_event"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view event",
+            "content_type": 9,
+            "codename": "view_event"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add Token",
+            "content_type": 10,
+            "codename": "add_token"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change Token",
+            "content_type": 10,
+            "codename": "change_token"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete Token",
+            "content_type": 10,
+            "codename": "delete_token"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view Token",
+            "content_type": 10,
+            "codename": "view_token"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add token",
+            "content_type": 11,
+            "codename": "add_tokenproxy"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change token",
+            "content_type": 11,
+            "codename": "change_tokenproxy"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete token",
+            "content_type": 11,
+            "codename": "delete_tokenproxy"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view token",
+            "content_type": 11,
+            "codename": "view_tokenproxy"
+        }
+    },
+    {
+        "model": "auth.group",
+        "pk": 1,
+        "fields": {
+            "name": "sales",
+            "permissions": []
+        }
+    },
+    {
+        "model": "auth.group",
+        "pk": 2,
+        "fields": {
+            "name": "support",
+            "permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$gaQvwHY7sVX72UVvs685MC$HQkGDhBY1kQ8+JYaaqxx9bzdlUd38TiAiMQltPfHCv0=",
+            "last_login": "2021-04-16T11:12:23.954Z",
+            "is_superuser": true,
+            "username": "antoine",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2021-04-13T11:58:06Z",
+            "groups": [
+                1
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$9jH9oLIJksqfUQLgauYomO$+KRyWDYMtx8mCdjubuQbnVgXS4z4l5/XlXe/x95BUjs=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "jean",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-04-14T15:52:23Z",
+            "groups": [
+                2
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$mwM89d5Hlma6at6wtbhLwq$CAw7Ut8l0sETJmL3QW5HmxfIPoC2SOTgOmhRuNnsbfk=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "support_user",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-04-16T07:50:51Z",
+            "groups": [
+                2
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$8EA8RhkaB6ohjAMjKUmPpq$m/NzSZ4h+gJXI5z/UFm31v+xwCiJg2vm1daR1OIYFp0=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sales_user",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-04-16T07:51:30Z",
+            "groups": [
+                1
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 6,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$Xx6pc3JOwURU5OF34sLK6y$daQL8g9EcRCv9Sh9P0dfWn0l7Qjmxi4hcAA9ivBgS/M=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "manager_user",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2021-04-16T07:52:00Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 7,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$fIjWyrjdL5AYoitIdrpoqG$bsAR19NsasoTSs2RmyB7uTLnjszw6GtECaHJsmnBzO8=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "random_user",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-04-16T07:52:46.653Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "auth",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "events",
+            "model": "client"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "events",
+            "model": "contract"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "events",
+            "model": "event"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "authtoken",
+            "model": "token"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "authtoken",
+            "model": "tokenproxy"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "8q2rp3bqri1aqur3rf58m13m2aleippk",
+        "fields": {
+            "session_data": ".eJxVjMsOwiAURP-FtSG8KuDSvd9A7uWCVA0kpV0Z_12adKGZ3Zwz82YBtrWEraclzMQuTLLTb4cQn6nugB5Q743HVtdlRr4r_KCd3xql1_Vw_w4K9DLWk5Ko0INx0kWF0WcUOZLJJED7EWMQpZqEpbPMCbW3NFxlEzgts2afL-eVN8c:1lXMOd:SRyAl157PH5o2y2tvGGQ84qnrS66q-V4qsqMNE8Srms",
+            "expire_date": "2021-04-30T11:12:23.956Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "a3jcqe19uvykffgbfg4g5znh1us1gn6f",
+        "fields": {
+            "session_data": ".eJxVjMsOwiAURP-FtSG8KuDSvd9A7uWCVA0kpV0Z_12adKGZ3Zwz82YBtrWEraclzMQuTLLTb4cQn6nugB5Q743HVtdlRr4r_KCd3xql1_Vw_w4K9DLWk5Ko0INx0kWF0WcUOZLJJED7EWMQpZqEpbPMCbW3NFxlEzgts2afL-eVN8c:1lXJDm:_EvwLvlL82drmdrz7yeL50k3YV_NRbR2X4ZNY3jt0Rk",
+            "expire_date": "2021-04-30T07:48:58.579Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "lqw5q7b4ccpb940q5f22l7c9ux7v6wd9",
+        "fields": {
+            "session_data": ".eJxVjMsOwiAURP-FtSG8KuDSvd9A7uWCVA0kpV0Z_12adKGZ3Zwz82YBtrWEraclzMQuTLLTb4cQn6nugB5Q743HVtdlRr4r_KCd3xql1_Vw_w4K9DLWk5Ko0INx0kWF0WcUOZLJJED7EWMQpZqEpbPMCbW3NFxlEzgts2afL-eVN8c:1lWLmN:VmoIAHu4nZvwsA7IuAJbCRO4g11LKubiUeLnHvIobT8",
+            "expire_date": "2021-04-27T16:20:43.262Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "lr53jdmpyjo5lng2f2lr5qln2ylw29ev",
+        "fields": {
+            "session_data": ".eJxVjMsOwiAURP-FtSG8KuDSvd9A7uWCVA0kpV0Z_12adKGZ3Zwz82YBtrWEraclzMQuTLLTb4cQn6nugB5Q743HVtdlRr4r_KCd3xql1_Vw_w4K9DLWk5Ko0INx0kWF0WcUOZLJJED7EWMQpZqEpbPMCbW3NFxlEzgts2afL-eVN8c:1lWHgX:SH2kxRaD_-a7xNKSilohZUOhu5eo2w2O94QLZ69c63Q",
+            "expire_date": "2021-04-27T11:58:25.843Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "s4vn91rcb2v9nrji9isb8id2rtp1dju4",
+        "fields": {
+            "session_data": ".eJxVjMsOwiAURP-FtSG8KuDSvd9A7uWCVA0kpV0Z_12adKGZ3Zwz82YBtrWEraclzMQuTLLTb4cQn6nugB5Q743HVtdlRr4r_KCd3xql1_Vw_w4K9DLWk5Ko0INx0kWF0WcUOZLJJED7EWMQpZqEpbPMCbW3NFxlEzgts2afL-eVN8c:1lWhm0:leZT9ZVkr7AEvYryK_uNZ4x2ViEAAakMMbSI52giYWg",
+            "expire_date": "2021-04-28T15:49:48.178Z"
+        }
+    },
+    {
+        "model": "authtoken.token",
+        "pk": "64e44abff4ea4e95a2e0ac384a5803cb4995714c",
+        "fields": {
+            "user": 1,
+            "created": "2021-04-13T12:37:25.218Z"
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 8,
+        "fields": {
+            "sales_contact": 1,
+            "first_name": "Anders",
+            "last_name": "Hellman",
+            "email": "anders.hellman@arasaka.com",
+            "phone": "0954787658",
+            "mobile": "0675938766",
+            "company_name": "Arasaka Corporation",
+            "converted": false,
+            "date_created": "2021-04-13T14:10:22.368Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 10,
+        "fields": {
+            "sales_contact": 1,
+            "first_name": "Anders",
+            "last_name": "Hellman",
+            "email": "anders.hellman@arasaka.com",
+            "phone": "0954787658",
+            "mobile": "0675938766",
+            "company_name": "Arasaka Corporation",
+            "converted": false,
+            "date_created": "2021-04-13T14:12:16.296Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 11,
+        "fields": {
+            "sales_contact": 1,
+            "first_name": "Anders",
+            "last_name": "Hellman",
+            "email": "anders.hellman@arasaka.com",
+            "phone": "0954787658",
+            "mobile": "0675938766",
+            "company_name": "Arasaka Corporation",
+            "converted": false,
+            "date_created": "2021-04-13T14:31:38.213Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 12,
+        "fields": {
+            "sales_contact": 1,
+            "first_name": "Anders",
+            "last_name": "Hellman",
+            "email": "anders.hellman@arasaka.com",
+            "phone": "0954787658",
+            "mobile": "0675938766",
+            "company_name": "Arasaka Corporation",
+            "converted": false,
+            "date_created": "2021-04-13T14:36:32.372Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 13,
+        "fields": {
+            "sales_contact": 1,
+            "first_name": "Anders",
+            "last_name": "Hellman",
+            "email": "anders.hellman@arasaka.com",
+            "phone": "0954787658",
+            "mobile": "0675938766",
+            "company_name": "Arasaka Corporation",
+            "converted": false,
+            "date_created": "2021-04-14T15:50:23.578Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 14,
+        "fields": {
+            "sales_contact": 5,
+            "first_name": "test_client_1",
+            "last_name": "test_client_1",
+            "email": "",
+            "phone": "",
+            "mobile": "",
+            "company_name": "test_client_1",
+            "converted": false,
+            "date_created": "2021-04-16T07:54:12.772Z",
+            "date_updated": "2021-04-16T07:54:11Z"
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 15,
+        "fields": {
+            "sales_contact": 5,
+            "first_name": "test_client_2",
+            "last_name": "test_client_2",
+            "email": "",
+            "phone": "",
+            "mobile": "",
+            "company_name": "test_client_2",
+            "converted": false,
+            "date_created": "2021-04-16T07:54:25.230Z",
+            "date_updated": "2021-04-16T07:54:24Z"
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 16,
+        "fields": {
+            "sales_contact": 1,
+            "first_name": "Andersjnhkonk",
+            "last_name": "Hellman",
+            "email": "anders.hellman@arasaka.com",
+            "phone": "0954787658",
+            "mobile": "0675938766",
+            "company_name": "Arasaka Corporation",
+            "converted": false,
+            "date_created": "2021-04-17T08:44:17.110Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 17,
+        "fields": {
+            "sales_contact": 1,
+            "first_name": "Andersjnhkonk",
+            "last_name": "Hellman",
+            "email": "anders.hellman@arasaka.com",
+            "phone": "0954787658",
+            "mobile": "0675938766",
+            "company_name": "Arasaka Corporation",
+            "converted": false,
+            "date_created": "2021-04-17T08:44:27.797Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 18,
+        "fields": {
+            "sales_contact": 1,
+            "first_name": "Anders",
+            "last_name": "Hellman",
+            "email": "anders.hellman@arasaka.com",
+            "phone": "0954787658",
+            "mobile": "0675938766",
+            "company_name": "Arasaka Corporation",
+            "converted": false,
+            "date_created": "2021-04-17T08:44:32.568Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 19,
+        "fields": {
+            "sales_contact": 1,
+            "first_name": "Anders",
+            "last_name": "Hellman",
+            "email": "anders.hellman@arasaka.com",
+            "phone": "0954787658",
+            "mobile": "0675938766",
+            "company_name": "Arasaka Corporation",
+            "converted": false,
+            "date_created": "2021-04-17T08:44:34.638Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.client",
+        "pk": 20,
+        "fields": {
+            "sales_contact": 1,
+            "first_name": "Anders",
+            "last_name": "Hellman",
+            "email": "anders.hellman@arasaka.com",
+            "phone": "0954787658",
+            "mobile": "0675938766",
+            "company_name": "Arasaka Corporation",
+            "converted": false,
+            "date_created": "2021-04-17T08:44:35.301Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.contract",
+        "pk": 1,
+        "fields": {
+            "client": 8,
+            "project_name": "Bad ass project",
+            "signed": false,
+            "amount": 500000.0,
+            "payment_due_date": null,
+            "date_created": "2021-04-14T07:16:30.374Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.contract",
+        "pk": 2,
+        "fields": {
+            "client": 12,
+            "project_name": "Bad ass project",
+            "signed": false,
+            "amount": 500000.0,
+            "payment_due_date": null,
+            "date_created": "2021-04-14T08:46:51.171Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.contract",
+        "pk": 3,
+        "fields": {
+            "client": 12,
+            "project_name": "Bad ass project",
+            "signed": false,
+            "amount": 500000.0,
+            "payment_due_date": null,
+            "date_created": "2021-04-14T10:01:01.944Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.contract",
+        "pk": 4,
+        "fields": {
+            "client": 12,
+            "project_name": "Bad ass project",
+            "signed": false,
+            "amount": 500000.0,
+            "payment_due_date": null,
+            "date_created": "2021-04-14T10:11:47.584Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.contract",
+        "pk": 5,
+        "fields": {
+            "client": 12,
+            "project_name": "Bad ass project",
+            "signed": false,
+            "amount": 500000.0,
+            "payment_due_date": null,
+            "date_created": "2021-04-14T12:39:59.868Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.contract",
+        "pk": 6,
+        "fields": {
+            "client": 12,
+            "project_name": "Bad ass project",
+            "signed": false,
+            "amount": 500000.0,
+            "payment_due_date": null,
+            "date_created": "2021-04-14T16:07:06.510Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.contract",
+        "pk": 7,
+        "fields": {
+            "client": 12,
+            "project_name": "Bad ass project",
+            "signed": false,
+            "amount": 500000.0,
+            "payment_due_date": null,
+            "date_created": "2021-04-14T16:07:10.842Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.contract",
+        "pk": 8,
+        "fields": {
+            "client": 14,
+            "project_name": "Bad ass project",
+            "signed": false,
+            "amount": 1.0,
+            "payment_due_date": "2021-04-16T07:55:08Z",
+            "date_created": "2021-04-16T07:55:09.458Z",
+            "date_updated": "2021-04-16T07:54:46Z"
+        }
+    },
+    {
+        "model": "events.contract",
+        "pk": 9,
+        "fields": {
+            "client": 14,
+            "project_name": "Bad ass project",
+            "signed": false,
+            "amount": 1.0,
+            "payment_due_date": "2021-04-16T07:55:29Z",
+            "date_created": "2021-04-16T07:55:32.370Z",
+            "date_updated": "2021-04-16T07:55:31Z"
+        }
+    },
+    {
+        "model": "events.contract",
+        "pk": 10,
+        "fields": {
+            "client": 12,
+            "project_name": "Bad ass project",
+            "signed": false,
+            "amount": 500000.0,
+            "payment_due_date": null,
+            "date_created": "2021-04-16T17:26:20.480Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.event",
+        "pk": 5,
+        "fields": {
+            "support_contact": null,
+            "attendees": 1200,
+            "event_date": null,
+            "notes": "Super mega party!!!! vvbgcvfhbngfc",
+            "completed": false,
+            "date_created": "2021-04-14T12:42:18.127Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.event",
+        "pk": 4,
+        "fields": {
+            "support_contact": null,
+            "attendees": 1200,
+            "event_date": null,
+            "notes": "Super mega party!!!! vvbgcvfhbngfc",
+            "completed": false,
+            "date_created": "2021-04-14T10:12:33.528Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.event",
+        "pk": 3,
+        "fields": {
+            "support_contact": null,
+            "attendees": 1200,
+            "event_date": null,
+            "notes": "Super mega party!!!! vvbgcvfhbngfc",
+            "completed": false,
+            "date_created": "2021-04-14T10:08:51.500Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.event",
+        "pk": 2,
+        "fields": {
+            "support_contact": null,
+            "attendees": 1200,
+            "event_date": null,
+            "notes": "Super mega party!!!!",
+            "completed": false,
+            "date_created": "2021-04-14T08:47:02.172Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.event",
+        "pk": 1,
+        "fields": {
+            "support_contact": null,
+            "attendees": 1200,
+            "event_date": null,
+            "notes": "Super mega party!!!!",
+            "completed": false,
+            "date_created": "2021-04-14T07:25:55.154Z",
+            "date_updated": null
+        }
+    },
+    {
+        "model": "events.event",
+        "pk": 8,
+        "fields": {
+            "support_contact": 4,
+            "attendees": 1,
+            "event_date": "2021-04-16T07:55:50Z",
+            "notes": "",
+            "completed": false,
+            "date_created": "2021-04-16T07:55:53.230Z",
+            "date_updated": "2021-04-16T07:55:53Z"
+        }
+    }
+]

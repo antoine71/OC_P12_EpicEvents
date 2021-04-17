@@ -1,6 +1,9 @@
+import uuid as uuid_lib
+
 from django.db import models
 from django.conf import settings
 from django.db.models.deletion import SET_NULL
+from django.db.models.query_utils import Q
 
 
 class Client(models.Model):
@@ -19,10 +22,14 @@ class Client(models.Model):
     class Meta:
         ordering = ['-date_updated', '-date_created']
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}, {self.company_name}"
+
 
 class Contract(models.Model):
     client = models.ForeignKey(
-        to=Client, on_delete=models.CASCADE)
+        to=Client, on_delete=models.CASCADE, related_name='contracts')
+    project_name = models.CharField(max_length=25)
     signed = models.BooleanField(default=False)
     amount = models.FloatField(null=True)
     payment_due_date = models.DateTimeField(null=True)
@@ -37,7 +44,8 @@ class Event(models.Model):
     contract = models.OneToOneField(
         to=Contract,
         on_delete=models.CASCADE,
-        primary_key=True)
+        primary_key=True,
+        related_name='event')
     support_contact = models.ForeignKey(
         to=settings.AUTH_USER_MODEL, on_delete=SET_NULL, null=True)
     attendees = models.IntegerField(null=True)

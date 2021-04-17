@@ -55,7 +55,7 @@ def test_create_contract(sales_client_owner_client_1):
     path = '/api/clients/1/add_contract/'
     response = client.post(
         path,
-        data={},
+        data={'project_name': 'test'},
         )
     new_contract = Contract.objects.latest('date_created')
     assert new_contract.client == Client.objects.get(pk=1)
@@ -66,7 +66,7 @@ def test_create_contract(sales_client_owner_client_1):
 def test_update_contract(sales_client_owner_client_1):
     client = sales_client_owner_client_1
     path = '/api/contracts/1/'
-    data = {'amount': 1000, 'signed': True}
+    data = {'amount': 1000, 'signed': True, 'project_name': 'test'}
     content = encode_multipart('BoUnDaRyStRiNg', data)
     content_type = 'multipart/form-data; boundary=BoUnDaRyStRiNg'
     response = client.put(path, content, content_type=content_type)
