@@ -1,3 +1,6 @@
+from datetime import datetime
+
+from django.utils.timezone import make_aware
 from rest_framework import status, viewsets, mixins
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -7,6 +10,7 @@ from ..models import Client, Contract, Event
 from .serializers import (ClientSerializer, ClientListSerializer, ContractSerializer,
                           ContractListSerializer, EventSerializer, EventListSerializer)
 from .permissions import ClientPermission, ContractPermission, EventPermission
+from .filters import ContractFilter, EventFilter
 
 
 class CustomListMixin:
@@ -17,9 +21,10 @@ class CustomListMixin:
     display.
     """
 
-    def list(self, request, *args, **kwargs):
+    def list(self, request, filter=None, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
-
+        if filter is not None:
+            queryset = queryset.filter(**filter)
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_list_serializer(page, many=True)
@@ -37,28 +42,60 @@ class CustomListMixin:
         return serializer_class(*args, **kwargs)
 
 
-class ClientViewSet(CustomListMixin, viewsets.ModelViewSet):
+class customUpdateMixin(mixins.UpdateModelMixin):
+    """
+    Custom Update View that allows to update the field date_updated.
+    """
+
+    def perform_update(self, serializer):
+        serializer.save(date_updated=make_aware(datetime.now()))
+
+
+class ClientViewSet(CustomListMixin, customUpdateMixin, viewsets.ModelViewSet):
 
     permission_classes = [IsAuthenticated, ClientPermission]
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
     list_serializer_class = ClientListSerializer
+    filterset_fields = [
+        'id',
+        'first_name',
+        'last_name',
+        'company_name',
+        'sales_contact',
+        'email',
+        'converted'
+        ]
 
     def perform_create(self, serializer):
         serializer.save(sales_contact=self.request.user)
 
-    @action(methods=['POST'], detail=True)
-    def add_contract(self, request, pk=None):
+    @action(methods=['POST', 'GET'], detail=True)
+    def contracts(self, request, pk=None):
         self.check_object_permissions(request, self.get_object())
-        serializer = ContractSerializer(data=request.data, context={'request': request})
-        serializer.is_valid(raise_exception=True)
-        serializer.save(client=self.get_object())
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        if request.method == 'POST':
+            client = self.get_object()
+            serializer = ContractSerializer(data=request.data, context={'request': request})
+            serializer.is_valid(raise_exception=True)
+            serializer.save(client=client)
+            if not client.converted:
+                client.converted = True
+                client.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            queryset = Contract.objects.filter(client__pk=pk)
+            page = self.paginate_queryset(queryset)
+            serializer = ContractListSerializer(page, many=True, context={'request': request})
+            return self.get_paginated_response(serializer.data)
+
+    @action(methods=['GET'], detail=False)
+    def me(self, request):
+        return self.list(request=request, filter={'sales_contact': request.user})
 
 
 class ContractViewSet(CustomListMixin,
                       mixins.RetrieveModelMixin,
-                      mixins.UpdateModelMixin,
+                      customUpdateMixin,
                       mixins.DestroyModelMixin,
                       viewsets.GenericViewSet):
 
@@ -66,20 +103,35 @@ class ContractViewSet(CustomListMixin,
     queryset = Contract.objects.all()
     serializer_class = ContractSerializer
     list_serializer_class = ContractListSerializer
+    filterset_class = ContractFilter
 
-    @action(methods=['POST'], detail=True)
-    def add_event(self, request, pk=None):
+    @action(methods=['GET', 'POST'], detail=True)
+    def events(self, request, pk=None):
         self.check_object_permissions(request, self.get_object())
-        serializer = EventSerializer(data=request.data, context={'request': request})
-        serializer.is_valid(raise_exception=True)
-        serializer.validate_contract(pk)
-        serializer.save(contract=self.get_object())     
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        if request.method == 'POST':
+            serializer = EventSerializer(data=request.data, context={'request': request})
+            serializer.is_valid(raise_exception=True)
+            serializer.validate_contract(pk)
+            serializer.save(contract=self.get_object())
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            queryset = Event.objects.filter(contract=pk)
+            page = self.paginate_queryset(queryset)
+            serializer = EventListSerializer(page, many=True, context={'request': request})
+            return self.get_paginated_response(serializer.data)
+
+    @action(methods=['GET'], detail=False)
+    def me(self, request):
+        return self.list(request=request, filter={'client__sales_contact': request.user})
+
+    @action(methods=['GET'], detail=False)
+    def prospects(self, request):
+        return self.list(request=request, filter={'converted': False})
 
 
 class EventViewSet(CustomListMixin,
                    mixins.RetrieveModelMixin,
-                   mixins.UpdateModelMixin,
+                   customUpdateMixin,
                    mixins.DestroyModelMixin,
                    viewsets.GenericViewSet):
 
@@ -87,3 +139,8 @@ class EventViewSet(CustomListMixin,
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     list_serializer_class = EventListSerializer
+    filterset_class = EventFilter
+
+    @action(methods=['GET'], detail=False)
+    def me(self, request):
+        return self.list(request=request, filter={'support_contact': request.user})

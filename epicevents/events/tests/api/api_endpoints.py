@@ -1,6 +1,6 @@
 API_ENDPOINTS = [
     {
-        'path': '/api/clients/',
+        'path': '/clients/',
         'methods':
             [
                 {
@@ -14,12 +14,22 @@ API_ENDPOINTS = [
             ],
     },
     {
-        'path': '/api/clients/1/',
+        'path': '/clients/me/',
         'methods':
             [
                 {
                     'name': 'get',
                     'permissions': ('all', ),
+                },
+            ],
+    },
+    {
+        'path': '/clients/1/',
+        'methods':
+            [
+                {
+                    'name': 'get',
+                    'permissions': ('sales_user', ),
                 },
                 {
                     'name': 'put',
@@ -32,17 +42,21 @@ API_ENDPOINTS = [
             ],
     },
     {
-        'path': '/api/clients/1/add_contract/',
+        'path': '/clients/1/contracts/',
         'methods':
             [
                 {
                     'name': 'post',
                     'permissions': ('sales_user', ),
                 },
+                {
+                    'name': 'get',
+                    'permissions': ('sales_user', ),
+                },
             ],
     },
     {
-        'path': '/api/contracts/',
+        'path': '/contracts/',
         'methods':
             [
                 {
@@ -52,12 +66,22 @@ API_ENDPOINTS = [
             ],
     },
     {
-        'path': '/api/contracts/1/',
+        'path': '/contracts/me/',
         'methods':
             [
                 {
                     'name': 'get',
                     'permissions': ('all', ),
+                },
+            ],
+    },
+    {
+        'path': '/contracts/1/',
+        'methods':
+            [
+                {
+                    'name': 'get',
+                    'permissions': ('sales_user', ),
                 },
                 {
                     'name': 'put',
@@ -70,9 +94,13 @@ API_ENDPOINTS = [
             ],
     },
     {
-        'path': '/api/contracts/2/add_event/',
+        'path': '/contracts/2/events/',
         'methods':
             [
+                {
+                    'name': 'get',
+                    'permissions': ('sales_user', ),
+                },
                 {
                     'name': 'post',
                     'permissions': ('sales_user', ),
@@ -80,7 +108,7 @@ API_ENDPOINTS = [
             ],
     },
     {
-        'path': '/api/events/',
+        'path': '/events/',
         'methods':
             [
                 {
@@ -90,12 +118,22 @@ API_ENDPOINTS = [
             ],
     },
     {
-        'path': '/api/events/1/',
+        'path': '/events/me/',
         'methods':
             [
                 {
                     'name': 'get',
                     'permissions': ('all', ),
+                },
+            ],
+    },    
+    {
+        'path': '/events/1/',
+        'methods':
+            [
+                {
+                    'name': 'get',
+                    'permissions': ('support_user', ),
                 },
                 {
                     'name': 'put',
@@ -108,3 +146,7 @@ API_ENDPOINTS = [
             ],
     },
 ]
+
+
+for endpoint in API_ENDPOINTS:
+    endpoint['path'] = '/api' + endpoint['path']

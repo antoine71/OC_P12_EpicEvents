@@ -1,9 +1,6 @@
-import uuid as uuid_lib
-
 from django.db import models
 from django.conf import settings
 from django.db.models.deletion import SET_NULL
-from django.db.models.query_utils import Q
 
 
 class Client(models.Model):

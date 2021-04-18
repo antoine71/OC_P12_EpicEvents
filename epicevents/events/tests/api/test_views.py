@@ -1,12 +1,17 @@
+from datetime import datetime
+
 from ...models import Client, Contract, Event
 
 from django.test.client import encode_multipart
 
 
+API_VERSION = ''
+
+
 def test_create_client(random_sales_client, random_sales_user):
     client = random_sales_client
     nb_clients = Client.objects.count()
-    path = '/api/clients/'
+    path = '/api/' + API_VERSION + 'clients/'
     response = client.post(
         path,
         data={
@@ -22,22 +27,25 @@ def test_create_client(random_sales_client, random_sales_user):
 
 
 def test_update_client(sales_client_owner_client_1):
-    client = sales_client_owner_client_1
-    path = '/api/clients/1/'
+    test_client = sales_client_owner_client_1
+    path = '/api/' + API_VERSION + 'clients/1/'
     data = {
-        'first_name': 'new_client',
-        'last_name': 'new_client',
-        'company_name': 'new_client',
+        'first_name': 'first_name_update',
+        'last_name': 'last_name_update',
+        'company_name': 'company_update',
     }
     content = encode_multipart('BoUnDaRyStRiNg', data)
     content_type = 'multipart/form-data; boundary=BoUnDaRyStRiNg'
-    response = client.put(path, content, content_type=content_type)
+    response = test_client.put(path, content, content_type=content_type)
+    updated_client_object = Client.objects.get(pk=1)
+    assert updated_client_object.first_name == 'first_name_update'
+    assert updated_client_object.date_updated.day == datetime.now().day
     assert response.status_code == 200
 
 
 def test_delete_client(sales_client_owner_client_1):
     client = sales_client_owner_client_1
-    path = '/api/clients/1/'
+    path = '/api/' + API_VERSION + 'clients/1/'
     nb_clients = Client.objects.count()
     nb_contracts = Contract.objects.count()
     contracts_pk = [contract.pk for contract in Contract.objects.filter(client=Client.objects.get(pk=1))]
@@ -52,30 +60,35 @@ def test_delete_client(sales_client_owner_client_1):
 def test_create_contract(sales_client_owner_client_1):
     client = sales_client_owner_client_1
     nb_contracts = Contract.objects.count()
-    path = '/api/clients/1/add_contract/'
+    assert not Client.objects.get(pk=1).converted
+    path = '/api/' + API_VERSION + 'clients/1/contracts/'
     response = client.post(
         path,
         data={'project_name': 'test'},
         )
     new_contract = Contract.objects.latest('date_created')
     assert new_contract.client == Client.objects.get(pk=1)
+    assert Client.objects.get(pk=1).converted
     assert Contract.objects.count() == nb_contracts + 1
     assert response.status_code == 201
 
 
 def test_update_contract(sales_client_owner_client_1):
     client = sales_client_owner_client_1
-    path = '/api/contracts/1/'
-    data = {'amount': 1000, 'signed': True, 'project_name': 'test'}
+    path = '/api/' + API_VERSION + 'contracts/1/'
+    data = {'amount': 1000, 'signed': True, 'project_name': 'updated_name'}
     content = encode_multipart('BoUnDaRyStRiNg', data)
     content_type = 'multipart/form-data; boundary=BoUnDaRyStRiNg'
     response = client.put(path, content, content_type=content_type)
+    updated_object = Contract.objects.get(pk=1)
+    assert updated_object.project_name == 'updated_name'
+    assert updated_object.date_updated.day == datetime.now().day
     assert response.status_code == 200
 
 
 def test_delete_contract(sales_client_owner_client_1):
     client = sales_client_owner_client_1
-    path = '/api/contracts/1/'
+    path = '/api/' + API_VERSION + 'contracts/1/'
     nb_contracts = Contract.objects.count()
     nb_events = Event.objects.count()
     event_pk = 1
@@ -89,7 +102,7 @@ def test_delete_contract(sales_client_owner_client_1):
 def test_create_event(sales_client_owner_client_1):
     client = sales_client_owner_client_1
     nb_events = Event.objects.count()
-    path = '/api/contracts/2/add_event/'
+    path = '/api/' + API_VERSION + 'contracts/2/events/'
     response = client.post(
         path,
         data={},
@@ -102,7 +115,7 @@ def test_create_event(sales_client_owner_client_1):
 
 def test_create_event_fails_if_contract_has_already_an_event(sales_client_owner_client_1):
     client = sales_client_owner_client_1
-    path = '/api/contracts/1/add_event/'
+    path = '/api/' + API_VERSION + 'contracts/1/events/'
     response = client.post(
         path,
         data={},
@@ -112,17 +125,20 @@ def test_create_event_fails_if_contract_has_already_an_event(sales_client_owner_
 
 def test_update_event(support_client_owner_event_1):
     client = support_client_owner_event_1
-    path = '/api/events/1/'
-    data = {'attendees': 1000, 'completed': True}
+    path = '/api/' + API_VERSION + 'events/1/'
+    data = {'attendees': 1021, 'completed': True}
     content = encode_multipart('BoUnDaRyStRiNg', data)
     content_type = 'multipart/form-data; boundary=BoUnDaRyStRiNg'
     response = client.put(path, content, content_type=content_type)
+    updated_object = Event.objects.get(pk=1)
+    assert updated_object.attendees == 1021
+    assert updated_object.date_updated.day == datetime.now().day
     assert response.status_code == 200
 
 
 def test_delete_event(support_client_owner_event_1):
     client = support_client_owner_event_1
-    path = '/api/events/1/'
+    path = '/api/' + API_VERSION + 'events/1/'
     nb_events = Event.objects.count()
     response = client.delete(path)
     assert Event.objects.count() == nb_events - 1

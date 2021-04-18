@@ -149,10 +149,15 @@ class EventListSerializer(serializers.ModelSerializer):
         model = Event
         fields = [
             'support_contact',
+            'attendees',
             'event_date',
             'completed',
             'contract',
+            'url',
         ]
+        extra_kwargs = {
+            "url": {"view_name": "api:event-detail"}
+        }
 
 
 class EventSerializer(serializers.ModelSerializer):
