@@ -8,7 +8,7 @@ class Client(models.Model):
         to=settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
-    email = models.CharField(max_length=100, blank=True)
+    email = models.EmailField(blank=True)
     phone = models.CharField(max_length=20, blank=True)
     mobile = models.CharField(max_length=20, blank=True)
     company_name = models.CharField(max_length=100)
@@ -26,7 +26,7 @@ class Client(models.Model):
 class Contract(models.Model):
     client = models.ForeignKey(
         to=Client, on_delete=models.CASCADE, related_name='contracts')
-    project_name = models.CharField(max_length=25)
+    project_name = models.CharField(max_length=100)
     signed = models.BooleanField(default=False)
     amount = models.FloatField(null=True)
     payment_due_date = models.DateTimeField(null=True)

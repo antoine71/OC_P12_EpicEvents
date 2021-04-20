@@ -46,10 +46,13 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
+    'epicevents.users.apps.UsersConfig',
     'epicevents.events.apps.EventsConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
+AUTH_USER_MODEL = "users.User"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
