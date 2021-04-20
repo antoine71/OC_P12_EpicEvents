@@ -38,38 +38,24 @@ The Entity Relations Diagram is the following, also available at the following [
 
 **Python 3** and **postgresql** are required to run the API.
 
-1. Clone this repository (or download the code [as a zip file](https://github.com/antoine71/epicevents/archive/main.zip)):
+1. Clone this repository (or download the code [as a zip file](https://github.com/antoine71/epicevents/archive/main.zip)), navigate to the root folder of the repository, create and activate a virtual environment, install project dependencies:
 
 ```shell
 git clone https://github.com/antoine71/epicevents.git
-```
-
-2. Navigate to the root folder of the repository.
-
-```shell
 cd epicevents
-```
-
-3. Create and activate a virtual environment:
-
-```shell
 python -m venv env
 source env/bin/activate
-```
-
-4. Install project dependencies:
-
-```shell
 pip install -r requirements.txt
 ```
 
-5. Create a postgresql database.
+2. Create a postgresql database and start the postgresql server.
 
 ```shell
 createdb epicevents_db
+sudo service postgresql start
 ```
 
-6. Modify as required to suit the requirements of your system the settings to connect to the database from the file `config/settings.py`
+3. Modify as required to suit the requirements of your system the settings to connect to the database from the file `config/settings.py`
 
 ```python
 ...
@@ -85,25 +71,14 @@ DATABASES = {
 ...
 ```
 
-7. Start the postgresql server
-
-```shell
-sudo service postgresql start
-```
-
-8. Apply the migrations to the database
+4. Apply the migrations to the database and create a superuser
 
 ```shell
 python manage.py migrate
-```
-
-9. Create a superuser
-
-```shell
 python manage.py createsuperuser
 ```
 
-10. Run the server
+5. Run the server
 
 ```shell
 $ python manage.py runserver
@@ -117,6 +92,7 @@ http://localhost:8000/api/
 ```
 The following endpoints are available:
 ```
+api/auth-token/ # POST
 api/clients/	# GET, POST
 api/clients/me	# GET
 api/clients/prospects	# GET
@@ -135,7 +111,7 @@ All the API endpoint details are provided in the [API documentation](https://doc
 
 ## Administration
 
-The API is provided with an web administration interface. This interface is accesible to all users with the `staff` permission.
+The API is provided with an web administration interface. This interface is accessible to all users with the `staff` permission.
 ```
 http://localhost:8000/api/admin/
 ```
