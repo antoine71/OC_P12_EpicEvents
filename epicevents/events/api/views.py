@@ -1,4 +1,5 @@
 from datetime import datetime
+import logging
 
 from django.utils.timezone import make_aware
 from rest_framework import status, viewsets, mixins
@@ -11,6 +12,9 @@ from .serializers import (ClientSerializer, ClientListSerializer, ContractSerial
                           ContractListSerializer, EventSerializer, EventListSerializer)
 from .permissions import ClientPermission, ContractPermission, EventPermission
 from .filters import ContractFilter, EventFilter
+
+
+logger = logging.getLogger(__name__)
 
 
 class CustomListMixin:
@@ -90,6 +94,8 @@ class ClientViewSet(CustomListMixin, customUpdateMixin, viewsets.ModelViewSet):
 
     @action(methods=['GET'], detail=False)
     def me(self, request):
+        logger.error(f'{request.user}')
+        logger.error('Something went wrong!')
         return self.list(request=request, filter={'sales_contact': request.user})
 
 

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -62,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'epicevents.events.api.logging.APILogMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -157,4 +159,65 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'formatters': {
+#         'django.server': {
+#             '()': 'django.utils.log.ServerFormatter',
+#             'format': '[{server_time}] {message}',
+#             'style': '{',
+#         }
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console'],
+#             'level': 'INFO',
+#             'propagate': False,
+#         },
+#     },
+# }
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+
+    'formatters': {
+        'epicevents_formater': {
+            '()': 'epicevents.events.api.logging.EpicEventsLogFormatter',
+            'format': '[{asctime}] {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'requests_log_file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.WatchedFileHandler',
+            'formatter': 'epicevents_formater',
+            'filename': 'requests.log'
+        },
+        'django_errors': {
+            'level': 'ERROR',
+            'class': 'logging.handlers.WatchedFileHandler',
+            'formatter': 'epicevents_formater',
+            'filename': 'django_errors.log'
+        },
+    },
+    'loggers': {
+        'epicevents.events.api.logging': {
+            'handlers': ['requests_log_file'],
+            'level': 'INFO',
+        },
+        'django': {
+            'handlers': ['django_errors'],
+            'level': 'ERROR',
+        },
+    },
 }
