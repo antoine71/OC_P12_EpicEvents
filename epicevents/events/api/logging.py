@@ -23,7 +23,7 @@ class APILogMiddleware:
             data = str(dict(request.POST.items()))
         elif method == 'PUT':
             data = str(dict(request.PUT.items()))
-        if method in ('POST', 'PUT') and path != '/auth-token/' and status_code.startswith('2'):
+        if method in ('POST', 'PUT') and path != '/auth-token/' and (status_code.startswith('2')):
             message = f"{user}: {method} {path} {status_code} {data}"
             logger.info(message)
         return response

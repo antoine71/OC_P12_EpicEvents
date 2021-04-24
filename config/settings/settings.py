@@ -183,13 +183,18 @@ LOGGING = {
         },
     },
     'handlers': {
+        'console': {
+            'level': 'INFO',
+            # 'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+        },
         'requests_log_file': {
             'level': 'INFO',
             'class': 'logging.handlers.WatchedFileHandler',
             'formatter': 'epicevents_formater',
             'filename': 'requests.log'
         },
-        'django_errors': {
+        'django_errors_log_file': {
             'level': 'ERROR',
             'class': 'logging.handlers.WatchedFileHandler',
             'formatter': 'epicevents_formater',
@@ -202,8 +207,8 @@ LOGGING = {
             'level': 'INFO',
         },
         'django': {
-            'handlers': ['django_errors'],
-            'level': 'ERROR',
+            'handlers': ['console', 'django_errors_log_file'],
+            'level': 'INFO',
         },
     },
 }
