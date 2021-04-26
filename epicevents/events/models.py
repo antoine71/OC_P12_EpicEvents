@@ -29,7 +29,7 @@ class Contract(models.Model):
     project_name = models.CharField(max_length=100)
     signed = models.BooleanField(default=False)
     amount = models.FloatField(null=True)
-    payment_due_date = models.DateTimeField(null=True)
+    payment_due_date = models.DateField(null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(null=True)
 
@@ -46,7 +46,7 @@ class Event(models.Model):
     support_contact = models.ForeignKey(
         to=settings.AUTH_USER_MODEL, on_delete=SET_NULL, null=True)
     attendees = models.IntegerField(null=True)
-    event_date = models.DateTimeField(null=True)
+    event_date = models.DateField(null=True)
     notes = models.TextField(blank=True)
     completed = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True)
