@@ -148,6 +148,37 @@ The members of the sales and support group benefit from permissions to access th
 
 The managers can log-in to the api admin site. From this site, they have full access to the Client, Event and Contract database tables. They have partial access to the User table. They can not see or create superusers. They can create new normal users, modify or delete existing normal users.
 
+## Logging
+
+The aplication will perform the following logging:
+
+* `django-errors.log`: logging of error messages of the following levels:
+    * WARNING: Information describing a minor problem that has occurred.
+    * ERROR: Information describing a major problem that has occurred.
+    * CRITICAL: Information describing a critical problem that has occurred.
+
+example:
+```
+[26/Apr/2021 20:36:04,868] Internal Server Error: /api/contracts/1/events
+Traceback (most recent call last):
+  File "/home/antoine/.virtualenvs/epicevents/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/antoine/.virtualenvs/epicevents/lib/python3.8/site-packages/django/utils/deprecation.py", line 116, in __call__
+    response = self.process_request(request)
+  File "/home/antoine/.virtualenvs/epicevents/lib/python3.8/site-packages/django/middleware/common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/antoine/.virtualenvs/epicevents/lib/python3.8/site-packages/django/middleware/common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/contracts/1/events/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+```
+
+* `request.log`: logging of all modification performed on the database
+
+example:
+```
+[26/Apr/2021 20:36:14,573] lilia: POST /api/contracts/1/events/ 201 {'attendees': '15', 'event_date': '15-06-2021', 'notes': 'Accrobranche et soirée mixologie'}
+```
+
 ## Testing
 
 * The repo is provided with a test suite in the folders `epicevents/events/tests/` and `epicevents/users/tests/`. The tests can be run using the following command from the root folder of the project:
