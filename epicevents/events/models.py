@@ -36,6 +36,9 @@ class Contract(models.Model):
     class Meta:
         ordering = ['-date_updated', '-date_created']
 
+    def __str__(self):
+        return f"Contrat: {self.project_name}"
+
 
 class Event(models.Model):
     contract = models.OneToOneField(
@@ -54,3 +57,6 @@ class Event(models.Model):
 
     class Meta:
         ordering = ['-date_updated', '-date_created']
+
+    def __str__(self):
+        return f"Evènement: {self.contract.project_name}"
