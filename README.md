@@ -150,7 +150,7 @@ The managers can log-in to the api admin site. From this site, they have full ac
 
 ## Logging
 
-The aplication will perform the following logging:
+The application will perform the following logging:
 
 * `django-errors.log`: logging of error messages of the following levels:
     * WARNING: Information describing a minor problem that has occurred.
