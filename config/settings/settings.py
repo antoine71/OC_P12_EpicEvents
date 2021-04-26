@@ -46,9 +46,9 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    'epicevents.users.apps.UsersConfig',
     'epicevents.events.apps.EventsConfig',
     'epicevents.basic_admin.apps.BasicAdminConfig',
+    'epicevents.users.apps.UsersConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -98,8 +98,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'epicevents_db',
-        'USER': 'antoine',
-        'PASSWORD': '',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
         'PORT': '5432',
     }
