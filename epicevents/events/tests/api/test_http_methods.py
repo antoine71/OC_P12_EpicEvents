@@ -10,7 +10,7 @@ from . import api_endpoints
 )
 def test_methods_not_authorized(endpoint, random_sales_client):
     client = random_sales_client
-    all_methods = ('get', 'post', 'put', 'delete')
+    all_methods = ('get', 'post', 'put', 'patch', 'delete')
     for method in endpoint['methods']:
         if method['name'] not in all_methods:
             response = getattr(client, method['name'])(endpoint['path'])

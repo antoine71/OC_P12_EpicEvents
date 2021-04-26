@@ -1,3 +1,9 @@
+"""
+Defines all API endpoints and permission.
+This dictionnary is used to test http methods and permissions.
+"""
+
+
 API_ENDPOINTS = [
     {
         'path': '/clients/',
@@ -24,6 +30,16 @@ API_ENDPOINTS = [
             ],
     },
     {
+        'path': '/clients/prospects/',
+        'methods':
+            [
+                {
+                    'name': 'get',
+                    'permissions': ('all', ),
+                },
+            ],
+    },
+    {
         'path': '/clients/1/',
         'methods':
             [
@@ -33,6 +49,10 @@ API_ENDPOINTS = [
                 },
                 {
                     'name': 'put',
+                    'permissions': ('sales_user', ),
+                },
+                {
+                    'name': 'patch',
                     'permissions': ('sales_user', ),
                 },
                 {
@@ -88,6 +108,10 @@ API_ENDPOINTS = [
                     'permissions': ('sales_user', ),
                 },
                 {
+                    'name': 'patch',
+                    'permissions': ('sales_user', ),
+                },
+                {
                     'name': 'delete',
                     'permissions': ('sales_user', ),
                 },
@@ -126,7 +150,7 @@ API_ENDPOINTS = [
                     'permissions': ('all', ),
                 },
             ],
-    },    
+    },
     {
         'path': '/events/1/',
         'methods':
@@ -137,6 +161,10 @@ API_ENDPOINTS = [
                 },
                 {
                     'name': 'put',
+                    'permissions': ('support_user', ),
+                },
+                {
+                    'name': 'patch',
                     'permissions': ('support_user', ),
                 },
                 {

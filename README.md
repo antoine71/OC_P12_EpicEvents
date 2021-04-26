@@ -99,30 +99,58 @@ api/auth-token/ # POST
 api/clients/	# GET, POST
 api/clients/me	# GET
 api/clients/prospects	# GET
-api/clients/{pk}/	# GET, PUT, DELETE
+api/clients/{pk}/	# GET, PUT, PATCH, DELETE
 api/clients/{pk}/contracts/	# GET, POST
 api/contracts/	# GET
 api/contracts/me	# GET
-api/contracts/{pk}/	# GET, PUT, DELETE
+api/contracts/{pk}/	# GET, PUT, PATCH, DELETE
 api/contracts/{pk}/events/	# GET, POST
 api/events/	# GET
 api/events/me	# GET
-api/events/{pk}/	# GET, PUT, DELETE
+api/events/{pk}/	# GET, PUT, PATCH, DELETE
 ```
 
 All the API endpoint details are provided in the [API documentation](https://documenter.getpostman.com/view/14947762/TzJu9x5r).
 
 ## Administration
 
-The API is provided with a web administration interface. This interface is accessible to all users with the `staff` permission.
+The application cones with 2 administration sites.
+
+* django-admin
 
 ```
-http://localhost:8000/api/admin/
+http://localhost:8000/django-admin/
 ```
+
+The django admin website is dedicated to the administration of the application.
+Only users with the status `supereuser` and `staff` can login to this site.
+
+
+* api-admin
+
+```
+http://localhost:8000/api-admin/
+```
+
+The api-admin website is a restricted version of the administration website which limits the functionnalities to only what is strictly required by the users of the management group.
+This interface is accessible to all users that belong to the group `managers`.
+
+## Users Management
+
+The managers can login to the api administration site to create new users. Users can be assigned to any of the 3 following groups:
+
+* `sales`: for users members of the sales group.
+* `support`: for users members of the support group.
+
+The members of the sales and support group benefit from permissions to access the API. The permission system is described in the API documentation.
+
+* `managers`: for users members of the managers group.
+
+The managers can log-in to the api admin site. From this site, they have full access to the Client, Event and Contract database tables. They have partial access to the User table. They can not see or create superusers. They can create new normal users, modify or delete existing normal users.
 
 ## Testing
 
-* The repo is provided with a full test suite in the folders `epicevents/events/tests/` and `epicevents/users/tests/`. This test suite provide 100% coverage. The tests can be run using the following command from the root folder of the project:
+* The repo is provided with a test suite in the folders `epicevents/events/tests/` and `epicevents/users/tests/`. The tests can be run using the following command from the root folder of the project:
 
 ```shell
 pytest
