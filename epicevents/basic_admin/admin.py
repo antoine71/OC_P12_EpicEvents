@@ -23,15 +23,14 @@ class BasicAdminSite(AdminSite):
     index_title = 'API administration'
     site_url = None
     login_form = BasicAdminAuthenticationForm
-    enable_nav_sidebar = False
 
     def has_permission(self, request):
         """
         Return True if the given HttpRequest has permission to view
         *at least one* page in the basic admin site.
         """
-        return request.user.is_active and 'managers' in (
-            group.name for group in request.user.groups.all())
+        return (request.user.is_active and 'managers' in (
+            group.name for group in request.user.groups.all())) or request.user.is_staff
 
 
 basic_admin_site = BasicAdminSite(name='basic-admin')

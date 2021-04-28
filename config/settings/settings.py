@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 DJANGO_APPS = [
-    'django.contrib.admin',
+    'epicevents.basic_admin.apps.BasicAdminSiteConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -47,7 +47,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     'epicevents.events.apps.EventsConfig',
-    'epicevents.basic_admin.apps.BasicAdminConfig',
+    'epicevents.basic_admin.apps.BasicAdminAppConfig',
     'epicevents.users.apps.UsersConfig',
 ]
 

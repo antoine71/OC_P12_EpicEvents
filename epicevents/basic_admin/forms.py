@@ -13,13 +13,13 @@ class BasicAdminAuthenticationForm(AdminAuthenticationForm):
         **AuthenticationForm.error_messages,
         'invalid_login': _(
             "Please enter the correct %(username)s and password for a "
-            "management group account. Note that both fields may be "
-            "case-sensitive."
+            "management group account or superuser. Note that both fields may "
+            "be case-sensitive."
         ),
     }
 
     def confirm_login_allowed(self, user):
-        if "managers" not in (group.name for group in user.groups.all()):
+        if ("managers" not in (group.name for group in user.groups.all())) and not user.is_staff:
             raise ValidationError(
                 self.error_messages['invalid_login'],
                 code='invalid_login',

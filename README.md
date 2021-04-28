@@ -114,26 +114,19 @@ All the API endpoint details are provided in the [API documentation](https://doc
 
 ## Administration
 
-The application cones with 2 administration sites.
-
-* django-admin
-
-```
-http://localhost:8000/django-admin/
-```
-
-The django admin website is dedicated to the administration of the application.
-Only users with the status `supereuser` and `staff` can login to this site.
-
-
-* api-admin
+The application comes with an administration site.
 
 ```
 http://localhost:8000/api-admin/
 ```
 
-The api-admin website is a restricted version of the administration website which limits the functionnalities to only what is strictly required by the users of the management group.
-This interface is accessible to all users that belong to the group `managers`.
+Only users with the status `superuser` or users that belong to the group `managers` can log in to the admin site.
+The functionnalities for users that belong to the group `managers` are limited to only what is strictly required by the users of the management group.
+
+* `superuser` have read/write access to the following tables: `Tokens`, `Groups`, `Clients`, `Contracts`, `Events`, `Users`
+* `managers` group users have read/write access to the following tables: `Clients`, `Contracts`, `Events`, `Users`. The access to the table `Users` has the following limitations:
+  * can not see or create users with `superuser` status
+  * can not see or create `Users` permissions
 
 ## Users Management
 
