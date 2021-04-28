@@ -63,7 +63,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'epicevents.events.api.logging.APILogMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -188,14 +187,7 @@ LOGGING = {
     'handlers': {
         'console': {
             'level': 'INFO',
-            # 'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
-        },
-        'requests_log_file': {
-            'level': 'INFO',
-            'class': 'logging.handlers.WatchedFileHandler',
-            'formatter': 'epicevents_formater',
-            'filename': 'requests.log'
         },
         'django_errors_log_file': {
             'level': 'ERROR',
@@ -205,13 +197,9 @@ LOGGING = {
         },
     },
     'loggers': {
-        'epicevents.events.api.logging': {
-            'handlers': ['requests_log_file'],
-            'level': 'INFO',
-        },
         'django': {
             'handlers': ['console', 'django_errors_log_file'],
-            'level': 'INFO',
+            'level': 'ERROR',
         },
     },
 }

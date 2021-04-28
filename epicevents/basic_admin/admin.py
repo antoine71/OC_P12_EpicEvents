@@ -23,6 +23,7 @@ class BasicAdminSite(AdminSite):
     index_title = 'API administration'
     site_url = None
     login_form = BasicAdminAuthenticationForm
+    enable_nav_sidebar = False
 
     def has_permission(self, request):
         """
