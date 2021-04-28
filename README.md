@@ -172,13 +172,6 @@ Traceback (most recent call last):
 RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/contracts/1/events/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
 ```
 
-* `request.log`: logging of all modification performed on the database
-
-example:
-```
-[26/Apr/2021 20:36:14,573] lilia: POST /api/contracts/1/events/ 201 {'attendees': '15', 'event_date': '15-06-2021', 'notes': 'Accrobranche et soirée mixologie'}
-```
-
 ## Testing
 
 * The repo is provided with a test suite in the folders `epicevents/events/tests/` and `epicevents/users/tests/`. The tests can be run using the following command from the root folder of the project:
