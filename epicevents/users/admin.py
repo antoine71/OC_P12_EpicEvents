@@ -37,8 +37,9 @@ class BasicUserAdmin(auth_admin.UserAdmin):
     def get_fieldsets(self, request, obj=None):
         if request.user.is_superuser:
             return super().get_fieldsets(request, obj)
-        else:
-            return self.managers_fieldsets
+        if not obj:
+            return self.add_fieldsets
+        return self.managers_fieldsets
 
 
 basic_admin_site.register(User, BasicUserAdmin)
